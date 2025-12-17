@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박재성 - 연구자 포트폴리오</title>
+    <title>Park Jaesung - Research Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -15,495 +15,567 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 네비게이션 */
+        /* Navigation Bar */
         nav {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
+            background-color: #fff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 0;
+            position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav h1 {
-            font-size: 1.5rem;
-        }
-
         nav ul {
-            display: flex;
             list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        /* 히어로 섹션 */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        /* 섹션 스타일 */
-        section {
-            padding: 80px 0;
-            background-color: white;
-            margin-bottom: 2px;
-        }
-
-        section:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        /* 프로필 섹션 */
-        .profile-content {
             display: flex;
-            gap: 3rem;
-            align-items: center;
-            max-width: 900px;
+            justify-content: center;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .profile-image {
-            flex: 0 0 250px;
+        nav li {
+            margin: 0;
         }
 
-        .profile-image img {
+        nav a {
+            display: block;
+            padding: 20px 30px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: #f5f5f5;
+            border-bottom: 3px solid #667eea;
+            color: #667eea;
+        }
+
+        /* Hero Section - Profile */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 40px;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-image-container {
+            flex-shrink: 0;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .profile-text {
             flex: 1;
         }
 
+        .profile-text h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .profile-text h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
         .profile-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #667eea;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.9;
         }
 
-        .profile-text p {
-            margin-bottom: 1rem;
+        .profile-text .contact {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .profile-bio {
+            margin-top: 30px;
+            font-size: 1.05rem;
             line-height: 1.8;
+            opacity: 0.95;
+            text-align: justify;
         }
 
-        /* 연구 섹션 */
-        .research-grid {
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 80px;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        /* Research Section */
+        .research-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+
+        .research-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .core-concept-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .core-concept-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .core-concept-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .core-concept-box li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .core-concept-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .tech-section {
+            margin: 50px 0;
+        }
+
+        .tech-section h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .tech-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .tech-card h4 {
+            color: #764ba2;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .tech-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .outcomes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 30px;
         }
 
-        .research-card {
+        .outcome-card {
             background: white;
-            padding: 2rem;
+            padding: 35px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
         }
 
-        .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        .outcome-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        .research-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        /* 논문 섹션 */
-        .publication-list {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .publication-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
-        }
-
-        .publication-item h3 {
+        .outcome-card h4 {
             color: #2c3e50;
-            margin-bottom: 0.5rem;
-            text-align: left;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
 
-        .publication-item .authors {
-            color: #7f8c8d;
-            margin-bottom: 0.5rem;
-            font-style: italic;
+        .outcome-card p {
+            color: #666;
+            line-height: 1.7;
         }
 
-        .publication-item .venue {
+        /* Publications Section */
+        .publication-item {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .publication-item h4 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .publication-date {
             color: #667eea;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
-        /* 교육 섹션 */
-        .education-list {
-            max-width: 800px;
-            margin: 0 auto;
+        .publication-item p {
+            color: #666;
+            line-height: 1.7;
         }
 
+        /* Education Section */
         .education-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 25px;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
         }
 
         .education-item h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .education-date {
             color: #667eea;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        .education-item .period {
-            color: #7f8c8d;
-            margin-bottom: 1rem;
+        .education-item p {
+            color: #666;
+            line-height: 1.7;
         }
 
-        /* 연락처 섹션 */
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .contact-item {
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+        .contact-card {
+            background: #f8f9fa;
+            padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
-        .contact-item h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
-        /* 푸터 */
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .contact-card:hover h3,
+        .contact-card:hover p {
+            color: white;
+        }
+
+        .contact-card p {
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
         footer {
-            background-color: #2c3e50;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 30px 20px;
         }
 
-        /* 반응형 디자인 */
+        footer p {
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .profile-content {
+            .hero-content {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .research-grid {
-                grid-template-columns: 1fr;
+            .profile-image {
+                width: 250px;
+                height: 330px;
             }
 
-            h2 {
+            .profile-text h1 {
                 font-size: 2rem;
             }
-        }
 
-        /* 스킬 태그 */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
+            .profile-text h2 {
+                font-size: 1.2rem;
+            }
 
-        .skill-tag {
-            background: #667eea;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
+            nav ul {
+                flex-wrap: wrap;
+            }
 
-        /* 버튼 스타일 */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+            nav a {
+                padding: 15px 20px;
+                font-size: 14px;
+            }
 
-        .btn:hover {
-            background: #764ba2;
-        }
-
-        /* 통계 카드 */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #7f8c8d;
-            font-size: 1.1rem;
+            .tech-grid,
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 네비게이션 -->
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <h1>박재성</h1>
-            <ul>
-                <li><a href="#about">소개</a></li>
-                <li><a href="#research">연구</a></li>
-                <li><a href="#publications">논문</a></li>
-                <li><a href="#education">학력</a></li>
-                <li><a href="#contact">연락처</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- 히어로 섹션 -->
-    <div class="hero">
-        <div class="container">
-            <h2>박재성</h2>
-            <p>마이크로 LED 스마트 조립 시스템 연구자</p>
-            <a href="#contact" class="btn">연락하기</a>
-        </div>
-    </div>
-
-    <!-- 소개 섹션 -->
-    <section id="about">
-        <div class="container">
-            <h2>프로필</h2>
-            <div class="profile-content">
-                <div class="profile-image">
-                    <img src="증명사진.jpg" alt="박재성 프로필 사진">
+    <!-- Hero Section - Profile -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-image-container">
+                <img src="증명사진.jpg" alt="Park Jaesung" class="profile-image" onerror="this.src='https://via.placeholder.com/300x400?text=Park+Jaesung'">
+            </div>
+            <div class="profile-text">
+                <h1>Park Jaesung</h1>
+                <h2>Graduate Student</h2>
+                <h3>Department of Photonics and Nanoelectronics</h3>
+                <h3>Hanyang University, Ansan, Republic of Korea</h3>
+                <p class="contact">E-mail: su0000ng@hanyang.ac.kr</p>
+                
+                <div class="profile-bio">
+                    Park Jaesung is a graduate student specializing in Micro-LED assembly technologies and advanced packaging processes. His research focuses on fluidic self-assembly (FSA), photoresist-assisted heterogeneous particle alignment, and low-temperature interconnect solutions. He is dedicated to advancing next-generation display technologies and semiconductor integration platforms through innovative micro-assembly techniques and process optimization.
                 </div>
-                <div class="profile-text">
-                    <h3>안녕하세요</h3>
-                    <p>
-                        저는 현재 한양대학교 대학원 융합기계공학과에서 석사과정을 밟고 있는 박재성입니다. 
-                        마이크로 LED 기술과 스마트 조립 시스템에 대한 연구를 진행하고 있습니다.
-                    </p>
-                    <p>
-                        디스플레이 기술의 미래를 선도하는 마이크로 LED 분야에서 혁신적인 조립 방법과 
-                        시스템 최적화를 연구하고 있으며, 이를 통해 차세대 디스플레이 산업에 기여하고자 합니다.
-                    </p>
-                    <div class="skills">
-                        <span class="skill-tag">Micro-LED</span>
-                        <span class="skill-tag">Smart Assembly</span>
-                        <span class="skill-tag">Display Technology</span>
-                        <span class="skill-tag">System Optimization</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research</h2>
+            
+            <h3 class="research-title">Micro-LED Smart Assembly Systems</h3>
+            <p class="research-subtitle">Advanced Process Engineering for Next-Generation Displays</p>
+
+            <div class="core-concept-box">
+                <h3>Core Concept</h3>
+                <ul>
+                    <li>We assemble micro-scale LED chips using photoresist-assisted fluidic self-assembly.</li>
+                    <li>Low-temperature, selective interconnects enable precise placement without unintended soldering.</li>
+                </ul>
+            </div>
+
+            <div class="tech-section">
+                <h3>Key Technologies</h3>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>Fluidic Self-Assembly (FSA)</h4>
+                        <p>Innovative micro-chip assembly technique using fluid dynamics for precise positioning and high-throughput parallel integration.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>SU-8 / OmniCoat Engineering</h4>
+                        <p>Sacrificial layer design for controlled assembly yield and structural integrity with precise dimensional control.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Low-Temperature Alloy Control (&lt;100 °C)</h4>
+                        <p>Precise thermal management for sensitive device integration using low-melting-point alloy systems.</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Process Window Optimization</h4>
+                        <p>Data-driven yield analysis and process parameter optimization using Python-based analytics and experimentation.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 연구 섹션 -->
-    <section id="research">
-        <div class="container">
-            <h2>연구 분야</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <h3>🔬 Micro-LED Technology</h3>
-                    <p>
-                        차세대 디스플레이 기술인 마이크로 LED의 제조 공정 및 
-                        성능 향상에 대한 연구를 수행하고 있습니다.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <h3>🤖 Smart Assembly Systems</h3>
-                    <p>
-                        지능형 조립 시스템을 통한 마이크로 LED의 효율적인 
-                        대량 생산 방법을 연구하고 있습니다.
-                    </p>
-                </div>
-                <div class="research-card">
-                    <h3>⚙️ Process Optimization</h3>
-                    <p>
-                        조립 공정의 최적화를 통해 생산성 향상과 불량률 감소를 
-                        목표로 연구를 진행하고 있습니다.
-                    </p>
+            <div class="tech-section">
+                <h3>Scalable Outcomes</h3>
+                <div class="outcomes-grid">
+                    <div class="outcome-card">
+                        <h4>📺 Micro-LED Displays</h4>
+                        <p>Fine-pitch, high-yield chip assembly enabling next-generation display technologies with superior brightness and energy efficiency.</p>
+                    </div>
+                    <div class="outcome-card">
+                        <h4>🔗 Heterogeneous Integration</h4>
+                        <p>Chips with different sizes & materials - enabling advanced multi-functional device platforms and chiplet architectures.</p>
+                    </div>
+                    <div class="outcome-card">
+                        <h4>📦 Advanced Packaging Platforms</h4>
+                        <p>Thermally constrained micro-device systems for cutting-edge semiconductor packaging and integration solutions.</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 통계 섹션 -->
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">발표 논문</div>
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication-item">
+                <span class="publication-date">IMID 2025</span>
+                <h4>Arrangement of Heterogeneous Particles Using Photoresist in Fluidic Self-Assembly</h4>
+                <p>Development of innovative photoresist-based methods for precise heterogeneous particle arrangement in FSA processes, enabling improved control over Micro-LED assembly patterns and yield enhancement.</p>
+            </div>
+
+            <div class="publication-item">
+                <span class="publication-date">IMID 2024</span>
+                <h4>Metal Alloy Degradation in FSA</h4>
+                <p>Comprehensive research on metal alloy degradation mechanisms in fluidic self-assembly processes for Micro-LED applications, investigating failure modes and developing mitigation strategies.</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <p class="education-date">2025. 03. ~ Current</p>
+                <h3>Graduate Student, Department of Photonics and Nanoelectronics</h3>
+                <p>Hanyang University, Ansan, Republic of Korea</p>
+                <p>Research Focus: Micro-LED Assembly Technologies and Advanced Packaging</p>
+            </div>
+
+            <div class="education-item">
+                <p class="education-date">2019. 03. ~ 2025. 02.</p>
+                <h3>B.S. Electronics Engineering</h3>
+                <p>Myongji University, Republic of Korea</p>
+                <p>Specialized in Semiconductor Device Physics and Optoelectronics</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>su0000ng@hanyang.ac.kr</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">연구 프로젝트</div>
+                <div class="contact-card">
+                    <h3>📱 Phone</h3>
+                    <p>+82 10-9284-0686</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">진행중인 석사과정</div>
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p>Hanyang University<br>Ansan, Gyeonggi-do<br>Republic of Korea</p>
+                </div>
+                <div class="contact-card">
+                    <h3>🎓 Department</h3>
+                    <p>Photonics and<br>Nanoelectronics</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- 논문 섹션 -->
-    <section id="publications">
-        <div class="container">
-            <h2>발표 논문</h2>
-            <div class="publication-list">
-                <div class="publication-item">
-                    <h3>Micro-LED Smart Assembly Systems Research</h3>
-                    <p class="authors">박재성, 외</p>
-                    <p class="venue">IMID 2024 (International Meeting on Information Display)</p>
-                    <p>마이크로 LED의 스마트 조립 시스템에 대한 혁신적인 접근 방법을 제시한 연구입니다.</p>
-                </div>
-                <div class="publication-item">
-                    <h3>Advanced Manufacturing Techniques for Micro-LED Displays</h3>
-                    <p class="authors">박재성, 외</p>
-                    <p class="venue">IMID 2025 (International Meeting on Information Display)</p>
-                    <p>마이크로 LED 디스플레이를 위한 차세대 제조 기술에 관한 연구입니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 학력 섹션 -->
-    <section id="education">
-        <div class="container">
-            <h2>학력</h2>
-            <div class="education-list">
-                <div class="education-item">
-                    <h3>한양대학교 대학원</h3>
-                    <p class="period">2024 - 현재</p>
-                    <p><strong>융합기계공학과 석사과정</strong></p>
-                    <p>마이크로 LED 스마트 조립 시스템 연구</p>
-                </div>
-                <div class="education-item">
-                    <h3>명지대학교</h3>
-                    <p class="period">2018 - 2024</p>
-                    <p><strong>기계공학과 학사</strong></p>
-                    <p>기계공학 기초 및 응용 분야 학습</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 연락처 섹션 -->
-    <section id="contact">
-        <div class="container">
-            <h2>연락처</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📧 이메일</h3>
-                    <p>qkrwotjd6355@naver.com</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📱 연락처</h3>
-                    <p>010-6355-1110</p>
-                </div>
-                <div class="contact-item">
-                    <h3>🏫 소속</h3>
-                    <p>한양대학교 대학원 융합기계공학과</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 푸터 -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 박재성. All rights reserved.</p>
-            <p>Micro-LED Smart Assembly Systems Researcher</p>
-        </div>
+        <p>&copy; 2025 Park Jaesung. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Graduate Student | Micro-LED Assembly & Advanced Packaging Technologies</p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
