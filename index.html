@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Park Jaesung - Research Portfolio</title>
+    <title>박재성 - 포트폴리오</title>
     <style>
         * {
             margin: 0;
@@ -15,556 +15,650 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f4f4;
         }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #fff;
-            border-bottom: 2px solid #e0e0e0;
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav li {
-            margin: 0;
-        }
-
-        nav a {
-            display: block;
-            padding: 20px 30px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: all 0.3s;
-            border-bottom: 3px solid transparent;
-        }
-
-        nav a:hover {
-            background-color: #f5f5f5;
-            border-bottom: 3px solid #667eea;
+        .section h2 {
             color: #667eea;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
         }
 
-        /* Hero Section - Profile */
-        .hero {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 80px 40px;
-            min-height: 500px;
+        .profile-section {
             display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            width: 100%;
-        }
-
-        .profile-image-container {
-            flex-shrink: 0;
+            gap: 2rem;
+            align-items: flex-start;
         }
 
         .profile-image {
             width: 300px;
             height: 400px;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .profile-text {
+        .profile-info {
             flex: 1;
         }
 
-        .profile-text h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .profile-text h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-            opacity: 0.95;
-        }
-
-        .profile-text h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .profile-text .contact {
-            font-size: 1.1rem;
-            margin-top: 20px;
-            opacity: 0.9;
-        }
-
-        .profile-bio {
-            margin-top: 30px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            opacity: 0.95;
-            text-align: justify;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        /* Section Styles */
-        section {
-            margin-bottom: 80px;
-        }
-
-        section h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        /* Research Section */
-        .research-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #667eea;
-            margin-bottom: 30px;
-        }
-
-        .research-subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .core-concept-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin-bottom: 50px;
-        }
-
-        .core-concept-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .core-concept-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .core-concept-box li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .core-concept-box li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .tech-section {
-            margin: 50px 0;
-        }
-
-        .tech-section h3 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .tech-grid {
+        .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .tech-card {
+        .info-item {
+            padding: 1rem;
             background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid #667eea;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
         }
 
-        .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        .info-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .tech-card h4 {
-            color: #764ba2;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .tech-card p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .outcomes-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .outcome-card {
-            background: white;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
             border-top: 4px solid #667eea;
         }
 
-        .outcome-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
-        .outcome-card h4 {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+        .skill-category ul {
+            list-style: none;
         }
 
-        .outcome-card p {
-            color: #666;
-            line-height: 1.7;
+        .skill-category li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
         }
 
-        /* Publications Section */
-        .publication-item {
-            background: #f8f9fa;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            border-left: 5px solid #764ba2;
-        }
-
-        .publication-item h4 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .publication-date {
+        .skill-category li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
             color: #667eea;
             font-weight: bold;
-            margin-bottom: 10px;
-            display: inline-block;
         }
 
-        .publication-item p {
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* Education Section */
-        .education-item {
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             background: #f8f9fa;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
         }
 
-        .education-item h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .experience-item h3, .project-item h3, .education-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
         }
 
-        .education-date {
+        .experience-item .period, .project-item .period, .education-item .period {
             color: #667eea;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 0.5rem;
         }
 
-        .education-item p {
-            color: #666;
-            line-height: 1.7;
+        .experience-item ul, .project-item ul {
+            margin-top: 1rem;
+            padding-left: 2rem;
         }
 
-        /* Contact Section */
-        .contact-grid {
+        .experience-item li, .project-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .achievements {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
         }
 
-        .contact-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
+        .achievement-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .contact-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+        .achievement-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .contact-card:hover h3,
-        .contact-card:hover p {
-            color: white;
-        }
-
-        .contact-card p {
-            color: #666;
-            font-size: 1.05rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        footer p {
+        .achievement-card p {
             opacity: 0.9;
+            font-size: 0.95rem;
         }
 
-        /* Responsive Design */
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid #667eea;
+            text-align: center;
+        }
+
+        .cert-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cert-card .date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: #764ba2;
+        }
+
         @media (max-width: 768px) {
-            .hero-content {
+            .profile-section {
                 flex-direction: column;
-                text-align: center;
             }
 
             .profile-image {
-                width: 250px;
-                height: 330px;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
-            .profile-text h1 {
+            header h1 {
                 font-size: 2rem;
             }
 
-            .profile-text h2 {
-                font-size: 1.2rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-            }
-
-            nav a {
-                padding: 15px 20px;
-                font-size: 14px;
-            }
-
-            .tech-grid,
-            .outcomes-grid {
+            .skills-grid, .info-grid, .achievements, .certifications {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .language-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .language-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .interest-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+
+        .skills-detail {
+            margin-top: 2rem;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>박재성 (Park Jaesung)</h1>
+            <p>웹 개발자 | Frontend & Backend Developer</p>
+        </header>
 
-    <!-- Hero Section - Profile -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="profile-image-container">
-                <img src="증명사진.png" alt="Park Jaesung" class="profile-image" onerror="this.src='https://via.placeholder.com/300x400?text=Park+Jaesung'">
-            </div>
-            <div class="profile-text">
-                <h1>Park Jaesung</h1>
-                <h2>Graduate Student</h2>
-                <h3>Department of Photonics and Nanoelectronics</h3>
-                <h3>Hanyang University, Ansan, Republic of Korea</h3>
-                <p class="contact">E-mail: su0000ng@hanyang.ac.kr</p>
-                
-                <div class="profile-bio">
-                    Park Jaesung is a graduate student specializing in Micro-LED assembly technologies and advanced packaging processes. His research focuses on fluidic self-assembly (FSA), photoresist-assisted heterogeneous particle alignment, and low-temperature interconnect solutions. He is dedicated to advancing next-generation display technologies and semiconductor integration platforms through innovative micro-assembly techniques and process optimization.
+        <!-- 프로필 섹션 -->
+        <section class="section">
+            <h2>👤 프로필</h2>
+            <div class="profile-section">
+                <img src="증명사진.jpg" alt="Park Jaesung" class="profile-image" onerror="this.src='https://via.placeholder.com/300x400?text=Park+Jaesung'">
+                <div class="profile-info">
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        안녕하세요. 웹 개발에 열정을 가진 박재성입니다. 
+                        프론트엔드와 백엔드 개발 모두에 관심이 많으며, 
+                        사용자 경험을 최우선으로 생각하는 개발자가 되고자 합니다.
+                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <strong>📧 이메일</strong>
+                            <span>wotjd9611@naver.com</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>📱 연락처</strong>
+                            <span>010-9447-2803</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>📍 거주지</strong>
+                            <span>경기도 광명시</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>🎓 학력</strong>
+                            <span>광운대학교 컴퓨터정보공학부</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="container">
-        <!-- Research Section -->
-        <section id="research">
-            <h2>Research</h2>
+        <!-- 학력 -->
+        <section class="section">
+            <h2>🎓 학력</h2>
+            <div class="education-item">
+                <h3>광운대학교</h3>
+                <div class="period">2019.03 - 2026.02 (예정)</div>
+                <p>컴퓨터정보공학부 전공</p>
+                <p style="margin-top: 0.5rem;">• 전공 관련 주요 수강 과목: 자료구조, 알고리즘, 데이터베이스, 소프트웨어공학</p>
+            </div>
+        </section>
+
+        <!-- 기술 스택 -->
+        <section class="section">
+            <h2>💻 기술 스택</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>RESTful API</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Others</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>VS Code</li>
+                        <li>Figma</li>
+                        <li>AWS 기초</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="skills-detail">
+                <h3 style="color: #667eea; margin-bottom: 1rem;">기술 숙련도</h3>
+                <div class="skill-bar-container">
+                    <div class="skill-name">
+                        <span>HTML/CSS</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-name">
+                        <span>React</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-name">
+                        <span>Database (SQL)</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 프로젝트 경험 -->
+        <section class="section">
+            <h2>🚀 프로젝트</h2>
             
-            <h3 class="research-title">Micro-LED Smart Assembly Systems</h3>
-            <p class="research-subtitle">Advanced Process Engineering for Next-Generation Displays</p>
-
-            <div class="core-concept-box">
-                <h3>Core Concept</h3>
+            <div class="project-item">
+                <h3>포트폴리오 웹사이트 제작</h3>
+                <div class="period">2024.01 - 2024.02</div>
+                <p>개인 포트폴리오 웹사이트를 기획하고 개발</p>
                 <ul>
-                    <li>We assemble micro-scale LED chips using photoresist-assisted fluidic self-assembly.</li>
-                    <li>Low-temperature, selective interconnects enable precise placement without unintended soldering.</li>
+                    <li>반응형 웹 디자인 적용으로 모바일/태블릿 환경 최적화</li>
+                    <li>순수 HTML, CSS, JavaScript를 활용한 개발</li>
+                    <li>GitHub Pages를 통한 배포</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">GitHub Pages</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>학교 커뮤니티 웹 애플리케이션 (팀 프로젝트)</h3>
+                <div class="period">2023.09 - 2023.12</div>
+                <p>학생들을 위한 정보 공유 및 커뮤니티 플랫폼</p>
+                <ul>
+                    <li>React를 활용한 SPA(Single Page Application) 구현</li>
+                    <li>Node.js와 Express로 RESTful API 서버 개발</li>
+                    <li>MongoDB를 활용한 데이터베이스 설계 및 관리</li>
+                    <li>JWT를 이용한 사용자 인증 시스템 구현</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">JWT</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>날씨 정보 웹 애플리케이션</h3>
+                <div class="period">2023.06 - 2023.07</div>
+                <p>OpenWeather API를 활용한 실시간 날씨 정보 제공 서비스</p>
+                <ul>
+                    <li>외부 API 연동 및 데이터 파싱</li>
+                    <li>사용자 위치 기반 날씨 정보 제공</li>
+                    <li>5일 예보 및 시간별 날씨 정보 시각화</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">API Integration</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 자격증 -->
+        <section class="section">
+            <h2>📜 자격증</h2>
+            <div class="certifications">
+                <div class="cert-card">
+                    <h3>정보처리기사</h3>
+                    <p class="date">취득 예정 (2024)</p>
+                </div>
+                <div class="cert-card">
+                    <h3>SQLD (SQL 개발자)</h3>
+                    <p class="date">취득 예정 (2024)</p>
+                </div>
+                <div class="cert-card">
+                    <h3>컴퓨터활용능력 1급</h3>
+                    <p class="date">2022.08</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 교육 및 활동 -->
+        <section class="section">
+            <h2>📚 교육 및 활동</h2>
+            <div class="experience-item">
+                <h3>웹 개발 부트캠프 수료</h3>
+                <div class="period">2023.03 - 2023.08</div>
+                <ul>
+                    <li>풀스택 웹 개발 과정 이수</li>
+                    <li>프론트엔드 및 백엔드 기술 학습</li>
+                    <li>팀 프로젝트를 통한 협업 경험</li>
                 </ul>
             </div>
-
-            <div class="tech-section">
-                <h3>Key Technologies</h3>
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <h4>Fluidic Self-Assembly (FSA)</h4>
-                        <p>Innovative micro-chip assembly technique using fluid dynamics for precise positioning and high-throughput parallel integration.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>SU-8 / OmniCoat Engineering</h4>
-                        <p>Sacrificial layer design for controlled assembly yield and structural integrity with precise dimensional control.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Low-Temperature Alloy Control (&lt;100 °C)</h4>
-                        <p>Precise thermal management for sensitive device integration using low-melting-point alloy systems.</p>
-                    </div>
-                    <div class="tech-card">
-                        <h4>Process Window Optimization</h4>
-                        <p>Data-driven yield analysis and process parameter optimization using Python-based analytics and experimentation.</p>
-                    </div>
-                </div>
+            <div class="experience-item">
+                <h3>대학교 프로그래밍 동아리 활동</h3>
+                <div class="period">2021.03 - 현재</div>
+                <ul>
+                    <li>주간 스터디 진행 및 코드 리뷰</li>
+                    <li>알고리즘 문제 해결 스터디</li>
+                    <li>동아리 웹사이트 유지보수 담당</li>
+                </ul>
             </div>
+        </section>
 
-            <div class="tech-section">
-                <h3>Scalable Outcomes</h3>
-                <div class="outcomes-grid">
-                    <div class="outcome-card">
-                        <h4>📺 Micro-LED Displays</h4>
-                        <p>Fine-pitch, high-yield chip assembly enabling next-generation display technologies with superior brightness and energy efficiency.</p>
-                    </div>
-                    <div class="outcome-card">
-                        <h4>🔗 Heterogeneous Integration</h4>
-                        <p>Chips with different sizes & materials - enabling advanced multi-functional device platforms and chiplet architectures.</p>
-                    </div>
-                    <div class="outcome-card">
-                        <h4>📦 Advanced Packaging Platforms</h4>
-                        <p>Thermally constrained micro-device systems for cutting-edge semiconductor packaging and integration solutions.</p>
-                    </div>
+        <!-- 수상 및 성과 -->
+        <section class="section">
+            <h2>🏆 수상 및 성과</h2>
+            <div class="achievements">
+                <div class="achievement-card">
+                    <h3>학과 프로그래밍 경진대회</h3>
+                    <p>우수상 (2023.11)</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>해커톤 대회 참가</h3>
+                    <p>본선 진출 (2023.05)</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>학과 성적 우수</h3>
+                    <p>학과 장학금 수혜 (2022)</p>
                 </div>
             </div>
         </section>
 
-        <!-- Publications Section -->
-        <section id="publications">
-            <h2>Publications</h2>
-            
-            <div class="publication-item">
-                <span class="publication-date">IMID 2025</span>
-                <h4>Arrangement of Heterogeneous Particles Using Photoresist in Fluidic Self-Assembly</h4>
-                <p>Development of innovative photoresist-based methods for precise heterogeneous particle arrangement in FSA processes, enabling improved control over Micro-LED assembly patterns and yield enhancement.</p>
-            </div>
-
-            <div class="publication-item">
-                <span class="publication-date">IMID 2024</span>
-                <h4>Metal Alloy Degradation in FSA</h4>
-                <p>Comprehensive research on metal alloy degradation mechanisms in fluidic self-assembly processes for Micro-LED applications, investigating failure modes and developing mitigation strategies.</p>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <p class="education-date">2025. 03. ~ Current</p>
-                <h3>Graduate Student, Department of Photonics and Nanoelectronics</h3>
-                <p>Hanyang University, Ansan, Republic of Korea</p>
-                <p>Research Focus: Micro-LED Assembly Technologies and Advanced Packaging</p>
-            </div>
-
-            <div class="education-item">
-                <p class="education-date">2019. 03. ~ 2025. 02.</p>
-                <h3>B.S. Electronics Engineering</h3>
-                <p>Myongji University, Republic of Korea</p>
-                <p>Specialized in Semiconductor Device Physics and Optoelectronics</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>📧 Email</h3>
-                    <p>su0000ng@hanyang.ac.kr</p>
+        <!-- 언어 능력 -->
+        <section class="section">
+            <h2>🌐 언어</h2>
+            <div class="languages">
+                <div class="language-item">
+                    <h3>한국어</h3>
+                    <p>모국어</p>
                 </div>
-                <div class="contact-card">
-                    <h3>📱 Phone</h3>
-                    <p>+82 10-9284-0686</p>
-                </div>
-                <div class="contact-card">
-                    <h3>📍 Location</h3>
-                    <p>Hanyang University<br>Ansan, Gyeonggi-do<br>Republic of Korea</p>
-                </div>
-                <div class="contact-card">
-                    <h3>🎓 Department</h3>
-                    <p>Photonics and<br>Nanoelectronics</p>
+                <div class="language-item">
+                    <h3>영어</h3>
+                    <p>중급 (기술 문서 읽기 가능)</p>
                 </div>
             </div>
         </section>
+
+        <!-- 관심사 -->
+        <section class="section">
+            <h2>💡 관심사</h2>
+            <div class="interests">
+                <span class="interest-tag">웹 접근성</span>
+                <span class="interest-tag">UI/UX 디자인</span>
+                <span class="interest-tag">클라우드 컴퓨팅</span>
+                <span class="interest-tag">머신러닝</span>
+                <span class="interest-tag">오픈소스 기여</span>
+                <span class="interest-tag">새로운 기술 학습</span>
+            </div>
+        </section>
+
+        <!-- 연락처 -->
+        <section class="section">
+            <h2>📞 연락처</h2>
+            <div class="contact-info">
+                <a href="mailto:wotjd9611@naver.com" class="contact-item">📧 Email</a>
+                <a href="tel:010-9447-2803" class="contact-item">📱 Phone</a>
+                <a href="https://github.com/parkjaesung" class="contact-item" target="_blank">💻 GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 박재성 (Park Jaesung). All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">이 포트폴리오는 지속적으로 업데이트됩니다.</p>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Park Jaesung. All rights reserved.</p>
-        <p style="margin-top: 10px; opacity: 0.8;">Graduate Student | Micro-LED Assembly & Advanced Packaging Technologies</p>
-    </footer>
-
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // 스킬 바 애니메이션
+        window.addEventListener('load', function() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
