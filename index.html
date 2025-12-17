@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박재성 - 포트폴리오</title>
+    <title>박재성 - 연구자 포트폴리오</title>
     <style>
         * {
             margin: 0;
@@ -21,655 +21,489 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* 네비게이션 */
+        nav {
+            background-color: #2c3e50;
             color: white;
-            text-align: center;
-            padding: 3rem 0;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .profile-section {
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
             display: flex;
+            list-style: none;
             gap: 2rem;
-            align-items: flex-start;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 섹션 스타일 */
+        section {
+            padding: 80px 0;
+            background-color: white;
+            margin-bottom: 2px;
+        }
+
+        section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* 프로필 섹션 */
+        .profile-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .profile-image {
-            width: 300px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            flex: 0 0 250px;
         }
 
-        .profile-info {
+        .profile-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-text {
             flex: 1;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .info-item {
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 5px;
-            border-left: 4px solid #667eea;
-        }
-
-        .info-item strong {
-            color: #667eea;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-top: 4px solid #667eea;
-        }
-
-        .skill-category h3 {
-            color: #667eea;
+        .profile-text h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .skill-category li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
             color: #667eea;
-            font-weight: bold;
         }
 
-        .experience-item, .project-item, .education-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
+        .profile-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
         }
 
-        .experience-item h3, .project-item h3, .education-item h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item .period, .project-item .period, .education-item .period {
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-item ul, .project-item ul {
-            margin-top: 1rem;
-            padding-left: 2rem;
-        }
-
-        .experience-item li, .project-item li {
-            margin-bottom: 0.5rem;
-        }
-
-        .achievements {
+        /* 연구 섹션 */
+        .research-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .achievement-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
-        .achievement-card h3 {
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .research-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* 논문 섹션 */
+        .publication-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .publication-item h3 {
+            color: #2c3e50;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            text-align: left;
         }
 
-        .achievement-card p {
-            opacity: 0.9;
-            font-size: 0.95rem;
+        .publication-item .authors {
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+            font-style: italic;
         }
 
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+        .publication-item .venue {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
 
-        .cert-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-top: 3px solid #667eea;
-            text-align: center;
+        /* 교육 섹션 */
+        .education-list {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .cert-card h3 {
+        .education-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .education-item h3 {
             color: #667eea;
             margin-bottom: 0.5rem;
-            font-size: 1.1rem;
         }
 
-        .cert-card .date {
-            color: #666;
-            font-size: 0.9rem;
+        .education-item .period {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #666;
-            margin-top: 2rem;
-        }
-
+        /* 연락처 섹션 */
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .contact-item {
-            background: #667eea;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: transform 0.3s ease;
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
-        .contact-item:hover {
-            transform: translateY(-3px);
-            background: #764ba2;
-        }
-
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-            }
-
-            .profile-image {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .skills-grid, .info-grid, .achievements, .certifications {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .languages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .language-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-
-        .language-item h3 {
+        .contact-item h3 {
             color: #667eea;
             margin-bottom: 0.5rem;
         }
 
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .interest-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* 푸터 */
+        footer {
+            background-color: #2c3e50;
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.95rem;
+            text-align: center;
+            padding: 2rem 0;
         }
 
-        .skills-detail {
-            margin-top: 2rem;
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .profile-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
         }
 
-        .skill-bar-container {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .skill-bar {
-            background: #e0e0e0;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            height: 100%;
-            border-radius: 5px;
-            transition: width 1s ease;
-        }
-
-        .project-tech {
+        /* 스킬 태그 */
+        .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
         }
 
-        .tech-tag {
+        .skill-tag {
             background: #667eea;
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* 버튼 스타일 */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        /* 통계 카드 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>박재성 (Park Jaesung)</h1>
-            <p>웹 개발자 | Frontend & Backend Developer</p>
-        </header>
+    <!-- 네비게이션 -->
+    <nav>
+        <div class="container">
+            <h1>박재성</h1>
+            <ul>
+                <li><a href="#about">소개</a></li>
+                <li><a href="#research">연구</a></li>
+                <li><a href="#publications">논문</a></li>
+                <li><a href="#education">학력</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- 프로필 섹션 -->
-        <section class="section">
-            <h2>👤 프로필</h2>
-            <div class="profile-section">
-                <img src="증명사진.jpg" alt="Park Jaesung" class="profile-image" onerror="this.src='https://via.placeholder.com/300x400?text=Park+Jaesung'">
-                <div class="profile-info">
-                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                        안녕하세요. 웹 개발에 열정을 가진 박재성입니다. 
-                        프론트엔드와 백엔드 개발 모두에 관심이 많으며, 
-                        사용자 경험을 최우선으로 생각하는 개발자가 되고자 합니다.
-                    </p>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <strong>📧 이메일</strong>
-                            <span>wotjd9611@naver.com</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>📱 연락처</strong>
-                            <span>010-9447-2803</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>📍 거주지</strong>
-                            <span>경기도 광명시</span>
-                        </div>
-                        <div class="info-item">
-                            <strong>🎓 학력</strong>
-                            <span>광운대학교 컴퓨터정보공학부</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 학력 -->
-        <section class="section">
-            <h2>🎓 학력</h2>
-            <div class="education-item">
-                <h3>광운대학교</h3>
-                <div class="period">2019.03 - 2026.02 (예정)</div>
-                <p>컴퓨터정보공학부 전공</p>
-                <p style="margin-top: 0.5rem;">• 전공 관련 주요 수강 과목: 자료구조, 알고리즘, 데이터베이스, 소프트웨어공학</p>
-            </div>
-        </section>
-
-        <!-- 기술 스택 -->
-        <section class="section">
-            <h2>💻 기술 스택</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul>
-                        <li>HTML5 / CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>React.js</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>RESTful API</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>MongoDB</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <ul>
-                        <li>Git / GitHub</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>AWS 기초</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="skills-detail">
-                <h3 style="color: #667eea; margin-bottom: 1rem;">기술 숙련도</h3>
-                <div class="skill-bar-container">
-                    <div class="skill-name">
-                        <span>HTML/CSS</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-name">
-                        <span>React</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-name">
-                        <span>Database (SQL)</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 프로젝트 경험 -->
-        <section class="section">
-            <h2>🚀 프로젝트</h2>
-            
-            <div class="project-item">
-                <h3>포트폴리오 웹사이트 제작</h3>
-                <div class="period">2024.01 - 2024.02</div>
-                <p>개인 포트폴리오 웹사이트를 기획하고 개발</p>
-                <ul>
-                    <li>반응형 웹 디자인 적용으로 모바일/태블릿 환경 최적화</li>
-                    <li>순수 HTML, CSS, JavaScript를 활용한 개발</li>
-                    <li>GitHub Pages를 통한 배포</li>
-                </ul>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">GitHub Pages</span>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>학교 커뮤니티 웹 애플리케이션 (팀 프로젝트)</h3>
-                <div class="period">2023.09 - 2023.12</div>
-                <p>학생들을 위한 정보 공유 및 커뮤니티 플랫폼</p>
-                <ul>
-                    <li>React를 활용한 SPA(Single Page Application) 구현</li>
-                    <li>Node.js와 Express로 RESTful API 서버 개발</li>
-                    <li>MongoDB를 활용한 데이터베이스 설계 및 관리</li>
-                    <li>JWT를 이용한 사용자 인증 시스템 구현</li>
-                </ul>
-                <div class="project-tech">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">JWT</span>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3>날씨 정보 웹 애플리케이션</h3>
-                <div class="period">2023.06 - 2023.07</div>
-                <p>OpenWeather API를 활용한 실시간 날씨 정보 제공 서비스</p>
-                <ul>
-                    <li>외부 API 연동 및 데이터 파싱</li>
-                    <li>사용자 위치 기반 날씨 정보 제공</li>
-                    <li>5일 예보 및 시간별 날씨 정보 시각화</li>
-                </ul>
-                <div class="project-tech">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">API Integration</span>
-                    <span class="tech-tag">Chart.js</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 자격증 -->
-        <section class="section">
-            <h2>📜 자격증</h2>
-            <div class="certifications">
-                <div class="cert-card">
-                    <h3>정보처리기사</h3>
-                    <p class="date">취득 예정 (2024)</p>
-                </div>
-                <div class="cert-card">
-                    <h3>SQLD (SQL 개발자)</h3>
-                    <p class="date">취득 예정 (2024)</p>
-                </div>
-                <div class="cert-card">
-                    <h3>컴퓨터활용능력 1급</h3>
-                    <p class="date">2022.08</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 교육 및 활동 -->
-        <section class="section">
-            <h2>📚 교육 및 활동</h2>
-            <div class="experience-item">
-                <h3>웹 개발 부트캠프 수료</h3>
-                <div class="period">2023.03 - 2023.08</div>
-                <ul>
-                    <li>풀스택 웹 개발 과정 이수</li>
-                    <li>프론트엔드 및 백엔드 기술 학습</li>
-                    <li>팀 프로젝트를 통한 협업 경험</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>대학교 프로그래밍 동아리 활동</h3>
-                <div class="period">2021.03 - 현재</div>
-                <ul>
-                    <li>주간 스터디 진행 및 코드 리뷰</li>
-                    <li>알고리즘 문제 해결 스터디</li>
-                    <li>동아리 웹사이트 유지보수 담당</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 수상 및 성과 -->
-        <section class="section">
-            <h2>🏆 수상 및 성과</h2>
-            <div class="achievements">
-                <div class="achievement-card">
-                    <h3>학과 프로그래밍 경진대회</h3>
-                    <p>우수상 (2023.11)</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>해커톤 대회 참가</h3>
-                    <p>본선 진출 (2023.05)</p>
-                </div>
-                <div class="achievement-card">
-                    <h3>학과 성적 우수</h3>
-                    <p>학과 장학금 수혜 (2022)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 언어 능력 -->
-        <section class="section">
-            <h2>🌐 언어</h2>
-            <div class="languages">
-                <div class="language-item">
-                    <h3>한국어</h3>
-                    <p>모국어</p>
-                </div>
-                <div class="language-item">
-                    <h3>영어</h3>
-                    <p>중급 (기술 문서 읽기 가능)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 관심사 -->
-        <section class="section">
-            <h2>💡 관심사</h2>
-            <div class="interests">
-                <span class="interest-tag">웹 접근성</span>
-                <span class="interest-tag">UI/UX 디자인</span>
-                <span class="interest-tag">클라우드 컴퓨팅</span>
-                <span class="interest-tag">머신러닝</span>
-                <span class="interest-tag">오픈소스 기여</span>
-                <span class="interest-tag">새로운 기술 학습</span>
-            </div>
-        </section>
-
-        <!-- 연락처 -->
-        <section class="section">
-            <h2>📞 연락처</h2>
-            <div class="contact-info">
-                <a href="mailto:wotjd9611@naver.com" class="contact-item">📧 Email</a>
-                <a href="tel:010-9447-2803" class="contact-item">📱 Phone</a>
-                <a href="https://github.com/parkjaesung" class="contact-item" target="_blank">💻 GitHub</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 박재성 (Park Jaesung). All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">이 포트폴리오는 지속적으로 업데이트됩니다.</p>
-        </footer>
+    <!-- 히어로 섹션 -->
+    <div class="hero">
+        <div class="container">
+            <h2>박재성</h2>
+            <p>마이크로 LED 스마트 조립 시스템 연구자</p>
+            <a href="#contact" class="btn">연락하기</a>
+        </div>
     </div>
 
-    <script>
-        // 스킬 바 애니메이션
-        window.addEventListener('load', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-        });
+    <!-- 소개 섹션 -->
+    <section id="about">
+        <div class="container">
+            <h2>프로필</h2>
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="증명사진.jpg" alt="박재성 프로필 사진">
+                </div>
+                <div class="profile-text">
+                    <h3>안녕하세요</h3>
+                    <p>
+                        저는 현재 한양대학교 대학원 융합기계공학과에서 석사과정을 밟고 있는 박재성입니다. 
+                        마이크로 LED 기술과 스마트 조립 시스템에 대한 연구를 진행하고 있습니다.
+                    </p>
+                    <p>
+                        디스플레이 기술의 미래를 선도하는 마이크로 LED 분야에서 혁신적인 조립 방법과 
+                        시스템 최적화를 연구하고 있으며, 이를 통해 차세대 디스플레이 산업에 기여하고자 합니다.
+                    </p>
+                    <div class="skills">
+                        <span class="skill-tag">Micro-LED</span>
+                        <span class="skill-tag">Smart Assembly</span>
+                        <span class="skill-tag">Display Technology</span>
+                        <span class="skill-tag">System Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // 부드러운 스크롤
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- 연구 섹션 -->
+    <section id="research">
+        <div class="container">
+            <h2>연구 분야</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>🔬 Micro-LED Technology</h3>
+                    <p>
+                        차세대 디스플레이 기술인 마이크로 LED의 제조 공정 및 
+                        성능 향상에 대한 연구를 수행하고 있습니다.
+                    </p>
+                </div>
+                <div class="research-card">
+                    <h3>🤖 Smart Assembly Systems</h3>
+                    <p>
+                        지능형 조립 시스템을 통한 마이크로 LED의 효율적인 
+                        대량 생산 방법을 연구하고 있습니다.
+                    </p>
+                </div>
+                <div class="research-card">
+                    <h3>⚙️ Process Optimization</h3>
+                    <p>
+                        조립 공정의 최적화를 통해 생산성 향상과 불량률 감소를 
+                        목표로 연구를 진행하고 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 통계 섹션 -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">발표 논문</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">연구 프로젝트</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">진행중인 석사과정</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 논문 섹션 -->
+    <section id="publications">
+        <div class="container">
+            <h2>발표 논문</h2>
+            <div class="publication-list">
+                <div class="publication-item">
+                    <h3>Micro-LED Smart Assembly Systems Research</h3>
+                    <p class="authors">박재성, 외</p>
+                    <p class="venue">IMID 2024 (International Meeting on Information Display)</p>
+                    <p>마이크로 LED의 스마트 조립 시스템에 대한 혁신적인 접근 방법을 제시한 연구입니다.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Advanced Manufacturing Techniques for Micro-LED Displays</h3>
+                    <p class="authors">박재성, 외</p>
+                    <p class="venue">IMID 2025 (International Meeting on Information Display)</p>
+                    <p>마이크로 LED 디스플레이를 위한 차세대 제조 기술에 관한 연구입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 학력 섹션 -->
+    <section id="education">
+        <div class="container">
+            <h2>학력</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <h3>한양대학교 대학원</h3>
+                    <p class="period">2024 - 현재</p>
+                    <p><strong>융합기계공학과 석사과정</strong></p>
+                    <p>마이크로 LED 스마트 조립 시스템 연구</p>
+                </div>
+                <div class="education-item">
+                    <h3>명지대학교</h3>
+                    <p class="period">2018 - 2024</p>
+                    <p><strong>기계공학과 학사</strong></p>
+                    <p>기계공학 기초 및 응용 분야 학습</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 연락처 섹션 -->
+    <section id="contact">
+        <div class="container">
+            <h2>연락처</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📧 이메일</h3>
+                    <p>qkrwotjd6355@naver.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📱 연락처</h3>
+                    <p>010-6355-1110</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🏫 소속</h3>
+                    <p>한양대학교 대학원 융합기계공학과</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 박재성. All rights reserved.</p>
+            <p>Micro-LED Smart Assembly Systems Researcher</p>
+        </div>
+    </footer>
 </body>
 </html>
