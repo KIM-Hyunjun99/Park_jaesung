@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Jaesung - R&D Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding:  60px 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right:  10px;
+            width: 20px;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .summary-content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+        }
+
+        . summary-content h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .summary-content p {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .work-item {
+            background-color: #f9f9f9;
+            padding: 25px;
+            margin-bottom:  20px;
+            border-radius: 5px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .work-item h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .education-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 5px solid #667eea;
+        }
+
+        .education-item h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        . education-item p {
+            color: #666;
+            font-size: 1.05em;
+        }
+
+        . date {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .header-info h1 {
+                font-size: 1.8em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-photo-container">
+                <div class="profile-photo" style="background-color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 3em;">👤</div>
+            </div>
+            <div class="header-info">
+                <h1>Park Jaesung</h1>
+                <div class="contact-info">
+                    <p><i>📱</i> +82 1092840686</p>
+                    <p><i>✉️</i> su0000ng@hanyang.ac.kr</p>
+                    <p><i>📍</i> Gyeonggi-do, Republic of Korea</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="summary">
+                <h2>Professional Summary</h2>
+                <div class="summary-content">
+                    <h3>R&D Engineer specializing in Micro-LED Assembly, Low-Temperature Interconnects, and Process Optimization</h3>
+                    <p>
+                        Nano-optoelectronics researcher with hands-on experience in <span class="highlight">Micro-LED fluidic self-assembly (FSA)</span> and <span class="highlight">photoresist-assisted heterogeneous particle alignment</span>. Specialized in <span class="highlight">low-melting-point alloy-based interconnect processes</span>, addressing challenges such as unintended soldering, chip agglomeration, and thermal-process compatibility. 
+                    </p>
+                    <p>
+                        Proven ability to <span class="highlight">engineer SU-8/OmniCoat sacrificial layers and PR removal strategies</span> to precisely control assembly yield and structural integrity. Experienced in designing <span class="highlight">process windows under strict thermal constraints (&lt;100 °C)</span> and systematically analyzing failure mechanisms through <span class="highlight">data-driven experimentation and Python-based analysis</span>. 
+                    </p>
+                    <p>
+                        Research background includes <span class="highlight">fine-pitch interconnect formation, thermal reliability in Micro-LED packaging</span>, and process scalability considerations. Combining strong experimental rigor with analytical insight, I aim to contribute to <span class="highlight">next-generation Micro-LED and advanced packaging process development</span>.
+                    </p>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Work Experience</h2>
+                
+                <div class="work-item">
+                    <h3>Metal Alloy Degradation in FSA</h3>
+                    <p class="date">IMID 2024</p>
+                    <p>Research on metal alloy degradation in fluidic self-assembly processes for Micro-LED applications. </p>
+                </div>
+
+                <div class="work-item">
+                    <h3>Arrangement of Heterogeneous Particles Using Photoresist in Fluidic Self-Assembly</h3>
+                    <p class="date">IMID 2025</p>
+                    <p>Development of photoresist-based methods for precise heterogeneous particle arrangement in FSA processes.</p>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2>Education and Training</h2>
+                
+                <div class="education-item">
+                    <p class="date">2025. 03. ~ Current</p>
+                    <h3>Graduate Student, Department of Photonics and Nanoelectronics</h3>
+                    <p>Hanyang University</p>
+                </div>
+
+                <div class="education-item">
+                    <p class="date">2019. 03. ~ 2025. 02.</p>
+                    <h3>B.S. Electronics Engineering</h3>
+                    <p>Myongji University</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Park Jaesung. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
