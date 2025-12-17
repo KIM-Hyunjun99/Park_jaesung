@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Park Jaesung - R&D Engineer</title>
+    <title>Park Jaesung - Research Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -15,229 +15,701 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        /* Navigation Bar */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        header {
-            background:  linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
             color: white;
-            padding:  60px 40px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            padding: 0.5rem 1rem;
         }
 
-        .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid white;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        nav a:hover {
+            opacity: 0.8;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 5px;
         }
 
-        .header-info h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
-        .contact-info {
-            font-size: 1.1em;
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
         }
 
-        .contact-info p {
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s;
         }
 
-        .contact-info i {
-            margin-right:  10px;
-            width: 20px;
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
-        main {
-            padding: 40px;
-        }
-
+        /* Section Styles */
         section {
-            margin-bottom: 50px;
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 1s;
         }
 
         h2 {
             color: #667eea;
-            font-size: 2em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
         }
 
-        .summary-content {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-left: 5px solid #667eea;
-            border-radius: 5px;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
         }
 
-        . summary-content h3 {
-            color: #333;
-            font-size: 1.5em;
-            margin-bottom: 15px;
+        /* Profile Section */
+        .profile-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .summary-content p {
-            text-align: justify;
+        .profile-image {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .profile-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .profile-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-text h3 {
+            color: #764ba2;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 15px;
         }
 
-        .highlight {
-            font-weight: bold;
+        /* Enhanced Research Section */
+        .research-overview {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .research-overview h3 {
             color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
-        .work-item {
-            background-color: #f9f9f9;
-            padding: 25px;
-            margin-bottom:  20px;
-            border-radius: 5px;
+        .research-overview p {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #667eea;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .research-card h4 {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .research-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .core-concept {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .core-concept h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .core-concept p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Publications Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-content h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .timeline-date {
+            width: 45%;
+            text-align: center;
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.2rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
             border-left: 5px solid #764ba2;
         }
 
-        .work-item h3 {
-            color: #764ba2;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-        }
-
-        .education-item {
-            padding: 20px;
-            margin-bottom: 15px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            border-left: 5px solid #667eea;
-        }
-
         .education-item h3 {
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        . education-item p {
-            color: #666;
-            font-size: 1.05em;
-        }
-
-        . date {
             color: #667eea;
-            font-weight: bold;
-            font-size: 0.95em;
+            margin-bottom: 0.5rem;
         }
 
+        .education-item p {
+            color: #666;
+            margin: 0.3rem 0;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            min-width: 200px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .contact-item:hover i {
+            color: white;
+        }
+
+        .contact-item h3 {
+            color: #764ba2;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item:hover h3 {
+            color: white;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .contact-item:hover a {
+            color: white;
+        }
+
+        /* Footer */
         footer {
-            background-color: #333;
+            background: #333;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 20px;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .header-info h1 {
-                font-size: 1.8em;
-            }
-
-            main {
-                padding: 20px;
+            .hero p {
+                font-size: 1rem;
             }
 
             h2 {
-                font-size: 1.5em;
+                font-size: 2rem;
+            }
+
+            .profile-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+
+            .timeline-content,
+            .timeline-date {
+                width: 100%;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile-photo-container">
-                <div class="profile-photo" style="background-color: #ddd; display: flex; align-items: center; justify-content: center; font-size: 3em;">👤</div>
-            </div>
-            <div class="header-info">
-                <h1>Park Jaesung</h1>
-                <div class="contact-info">
-                    <p><i>📱</i> +82 1092840686</p>
-                    <p><i>✉️</i> su0000ng@hanyang.ac.kr</p>
-                    <p><i>📍</i> Gyeonggi-do, Republic of Korea</p>
-                </div>
-            </div>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <main>
-            <section id="summary">
-                <h2>Professional Summary</h2>
-                <div class="summary-content">
-                    <h3>R&D Engineer specializing in Micro-LED Assembly, Low-Temperature Interconnects, and Process Optimization</h3>
-                    <p>
-                        Nano-optoelectronics researcher with hands-on experience in <span class="highlight">Micro-LED fluidic self-assembly (FSA)</span> and <span class="highlight">photoresist-assisted heterogeneous particle alignment</span>. Specialized in <span class="highlight">low-melting-point alloy-based interconnect processes</span>, addressing challenges such as unintended soldering, chip agglomeration, and thermal-process compatibility. 
-                    </p>
-                    <p>
-                        Proven ability to <span class="highlight">engineer SU-8/OmniCoat sacrificial layers and PR removal strategies</span> to precisely control assembly yield and structural integrity. Experienced in designing <span class="highlight">process windows under strict thermal constraints (&lt;100 °C)</span> and systematically analyzing failure mechanisms through <span class="highlight">data-driven experimentation and Python-based analysis</span>. 
-                    </p>
-                    <p>
-                        Research background includes <span class="highlight">fine-pitch interconnect formation, thermal reliability in Micro-LED packaging</span>, and process scalability considerations. Combining strong experimental rigor with analytical insight, I aim to contribute to <span class="highlight">next-generation Micro-LED and advanced packaging process development</span>.
-                    </p>
-                </div>
-            </section>
-
-            <section id="experience">
-                <h2>Work Experience</h2>
-                
-                <div class="work-item">
-                    <h3>Metal Alloy Degradation in FSA</h3>
-                    <p class="date">IMID 2024</p>
-                    <p>Research on metal alloy degradation in fluidic self-assembly processes for Micro-LED applications. </p>
-                </div>
-
-                <div class="work-item">
-                    <h3>Arrangement of Heterogeneous Particles Using Photoresist in Fluidic Self-Assembly</h3>
-                    <p class="date">IMID 2025</p>
-                    <p>Development of photoresist-based methods for precise heterogeneous particle arrangement in FSA processes.</p>
-                </div>
-            </section>
-
-            <section id="education">
-                <h2>Education and Training</h2>
-                
-                <div class="education-item">
-                    <p class="date">2025. 03. ~ Current</p>
-                    <h3>Graduate Student, Department of Photonics and Nanoelectronics</h3>
-                    <p>Hanyang University</p>
-                </div>
-
-                <div class="education-item">
-                    <p class="date">2019. 03. ~ 2025. 02.</p>
-                    <h3>B.S. Electronics Engineering</h3>
-                    <p>Myongji University</p>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Park Jaesung. All rights reserved.</p>
-        </footer>
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <h1>Park Jaesung</h1>
+        <p>Researcher | Micro-LED Assembly Systems | Advanced Packaging Technologies</p>
     </div>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2>Profile</h2>
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Park Jaesung" onerror="this.src='https://via.placeholder.com/250?text=Park+Jaesung'">
+                </div>
+                <div class="profile-text">
+                    <h3>About Me</h3>
+                    <p>
+                        I am a dedicated researcher specializing in advanced micro-assembly technologies and heterogeneous integration systems. 
+                        My work focuses on developing innovative solutions for Micro-LED displays and next-generation semiconductor packaging.
+                    </p>
+                    <p>
+                        With expertise in fluidic self-assembly, photolithography processes, and low-temperature bonding techniques, 
+                        I strive to push the boundaries of what's possible in micro-scale manufacturing and integration.
+                    </p>
+                    <p>
+                        My research aims to bridge the gap between laboratory innovations and scalable industrial applications, 
+                        contributing to the advancement of display technologies and semiconductor integration platforms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Research Section -->
+        <section id="research">
+            <h2>Research Focus</h2>
+            
+            <div class="research-overview">
+                <h3>Micro-LED Smart Assembly Systems</h3>
+                <p>
+                    Developing cutting-edge assembly and integration technologies for next-generation Micro-LED displays 
+                    and heterogeneous semiconductor systems through innovative fluidic self-assembly and advanced packaging techniques.
+                </p>
+            </div>
+
+            <div class="core-concept">
+                <h4>Core Concept</h4>
+                <p>
+                    Leveraging fluidic self-assembly (FSA) combined with advanced photolithography and bonding technologies 
+                    to achieve precise, high-throughput integration of micro-scale components for displays and semiconductor systems. 
+                    This approach enables scalable manufacturing of complex heterogeneous systems with unprecedented precision and efficiency.
+                </p>
+            </div>
+
+            <h3 style="color: #667eea; text-align: center; margin: 2rem 0;">Key Technologies</h3>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h4>Fluidic Self-Assembly (FSA)</h4>
+                    <ul>
+                        <li>High-precision component placement using fluid dynamics</li>
+                        <li>Parallel assembly of thousands of micro-components</li>
+                        <li>Shape-matched receptor-chip integration</li>
+                        <li>Optimized assembly efficiency and yield</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <h4>SU-8/OmniCoat Photolithography</h4>
+                    <ul>
+                        <li>Advanced receptor pattern fabrication</li>
+                        <li>High aspect ratio microstructure creation</li>
+                        <li>Sacrificial layer processing</li>
+                        <li>Precise dimensional control</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <h4>Low-Temperature Alloy Bonding</h4>
+                    <ul>
+                        <li>Bi-Sn and In-Sn alloy systems</li>
+                        <li>Temperature-controlled phase transitions</li>
+                        <li>Reliable electrical and mechanical connections</li>
+                        <li>Thermal stress minimization</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <h4>Process Optimization</h4>
+                    <ul>
+                        <li>Flow rate and assembly parameter tuning</li>
+                        <li>Yield enhancement strategies</li>
+                        <li>Defect reduction methodologies</li>
+                        <li>Scalability assessment and improvement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; text-align: center; margin: 3rem 0 2rem 0;">Scalable Outcomes</h3>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h4>Micro-LED Displays</h4>
+                    <ul>
+                        <li>Ultra-high resolution display fabrication</li>
+                        <li>Mass transfer of microscale LEDs</li>
+                        <li>Full-color display integration</li>
+                        <li>Energy-efficient display technologies</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <h4>Heterogeneous Integration</h4>
+                    <ul>
+                        <li>Multi-material system integration</li>
+                        <li>3D packaging architectures</li>
+                        <li>Chiplet-based design enablement</li>
+                        <li>Advanced interconnect solutions</li>
+                    </ul>
+                </div>
+
+                <div class="research-card">
+                    <h4>Advanced Packaging Platforms</h4>
+                    <ul>
+                        <li>System-in-Package (SiP) solutions</li>
+                        <li>Fan-out wafer-level packaging</li>
+                        <li>High-density interconnect systems</li>
+                        <li>Next-generation semiconductor packaging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Timeline -->
+        <section id="publications">
+            <h2>Publications Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Advanced Micro-LED Assembly</h4>
+                        <p>Novel fluidic self-assembly techniques for high-throughput Micro-LED display fabrication with improved yield and precision.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Low-Temperature Bonding Methods</h4>
+                        <p>Investigation of Bi-Sn and In-Sn alloy systems for reliable heterogeneous integration in semiconductor packaging.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>SU-8 Photolithography Optimization</h4>
+                        <p>Enhanced receptor pattern fabrication using advanced SU-8/OmniCoat processes for improved FSA performance.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h4>Heterogeneous Integration Platform</h4>
+                        <p>Development of scalable integration platform for multi-material semiconductor systems and chiplet architectures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Ph.D. in Electrical Engineering</h3>
+                <p><strong>Institution:</strong> [University Name]</p>
+                <p><strong>Period:</strong> [Year] - [Year]</p>
+                <p><strong>Focus:</strong> Micro-assembly technologies and heterogeneous integration</p>
+            </div>
+
+            <div class="education-item">
+                <h3>M.S. in Electrical Engineering</h3>
+                <p><strong>Institution:</strong> [University Name]</p>
+                <p><strong>Period:</strong> [Year] - [Year]</p>
+                <p><strong>Focus:</strong> Semiconductor device physics and fabrication</p>
+            </div>
+
+            <div class="education-item">
+                <h3>B.S. in Electrical Engineering</h3>
+                <p><strong>Institution:</strong> [University Name]</p>
+                <p><strong>Period:</strong> [Year] - [Year]</p>
+                <p><strong>Focus:</strong> Electronic circuits and systems</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:park.jaesung@example.com">park.jaesung@example.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Office</h3>
+                    <p>[Office Location]<br>[Building and Room Number]</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>Research Lab</h3>
+                    <p>[Lab Name]<br>[Department]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Park Jaesung. All rights reserved.</p>
+        <p>Last updated: December 17, 2025</p>
+    </footer>
 </body>
 </html>
